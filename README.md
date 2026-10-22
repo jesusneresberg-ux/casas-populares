@@ -1,145 +1,72 @@
-# Casas Populares - Gestão de Obras
+# 🏠 Casas Populares - Sistema de Gestão de Obras
 
-Aplicativo móvel para gestão e acompanhamento de construção de casas populares.
+Sistema web para gerenciamento de construção de casas populares.
 
-## 🏗️ Funcionalidades
+## 📱 Progressive Web App (PWA)
 
-- **Dashboard**: Visão geral de todas as obras em andamento
-- **Controle de Custos**: Registro de gastos e materiais
-- **Cronograma**: Acompanhamento de etapas da construção
-- **Registro Fotográfico**: Galeria de fotos das obras
-- **Geração de APK**: Build automático via GitHub Actions
+Este é um aplicativo web que pode ser **instalado no celular** como se fosse um app nativo!
 
-## 🚀 Tecnologias
+### Como instalar no celular:
 
-- Next.js 14 (React)
-- TypeScript
-- Tailwind CSS
-- Capacitor (para Android)
-- Lucide Icons
-- GitHub Actions (CI/CD)
+#### Android (Chrome):
+1. Abra o site no Chrome
+2. Toque no menu (⋮) 
+3. Selecione "Adicionar à tela inicial"
+4. Confirme
 
-## 📦 Instalação Local
+#### iOS (Safari):
+1. Abra o site no Safari
+2. Toque no botão de compartilhar
+3. Selecione "Adicionar à Tela de Início"
+4. Confirme
 
-1. Instale as dependências:
+## 🚀 Desenvolvimento Local
+
 ```bash
+# Instalar dependências
 npm install
-```
 
-2. Execute o projeto em modo desenvolvimento:
-```bash
+# Rodar em modo desenvolvimento
 npm run dev
+
+# Build para produção
+npm run build
+
+# Rodar build de produção
+npm start
 ```
 
-3. Acesse: http://localhost:3000
+## 📦 Deploy
 
-## 🤖 Gerar APK Automaticamente com GitHub
-
-### Método Rápido (Windows):
-1. Execute o script:
+### Vercel (Recomendado)
 ```bash
-setup-github.bat
+npm install -g vercel
+vercel
 ```
 
-### Método Manual:
-1. Crie o repositório no GitHub: https://github.com/new
-   - Nome: `casas-populares`
-   - Usuário: `jesusneresberg-ux`
-
-2. Configure e envie o código:
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/jesusneresberg-ux/casas-populares.git
-git branch -M main
-git push -u origin main
-```
-
-3. O GitHub Actions vai:
-   - ✅ Compilar o Next.js
-   - ✅ Gerar o APK automaticamente
-   - ✅ Disponibilizar para download
-
-4. Baixe o APK:
-   - Vá em: `https://github.com/jesusneresberg-ux/casas-populares/actions`
-   - Clique no workflow mais recente
-   - Baixe o artifact `casas-populares-debug.apk`
-   - Ou acesse as Releases
-
-### Gerar novo APK:
-Sempre que fizer mudanças:
-```bash
-git add .
-git commit -m "Descrição das mudanças"
-git push
-```
-
-O GitHub Actions gera um novo APK automaticamente!
-
-## 📱 Gerar APK Localmente (Android Studio)
-
-1. Faça o build do Next.js:
+### Netlify
 ```bash
 npm run build
+# Faça upload da pasta .next
 ```
 
-2. Sincronize com Capacitor:
-```bash
-npx cap sync android
-```
+## 🎯 Funcionalidades
 
-3. Abra no Android Studio:
-```bash
-npx cap open android
-```
+- ✅ Dashboard com visão geral
+- ✅ Cronograma de obras
+- ✅ Controle de custos
+- ✅ Registro fotográfico
+- ✅ Funciona offline (após primeira visita)
+- ✅ Instalável no celular
 
-4. No Android Studio:
-   - Build > Build Bundle(s) / APK(s) > Build APK(s)
-   - O APK estará em: `android/app/build/outputs/apk/debug/`
+## 🛠️ Tecnologias
 
-## 📱 Instalar APK no Celular
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- PWA
 
-1. Baixe o arquivo `.apk` do GitHub Actions
-2. Transfira para o celular Android
-3. Abra o arquivo no celular
-4. Permita "Instalar de fontes desconhecidas" se solicitado
-5. Instale o app
+## 📄 Licença
 
-## 📁 Estrutura do Projeto
-
-```
-casas-populares/
-├── .github/
-│   └── workflows/
-│       └── android-build.yml  # GitHub Actions
-├── app/
-│   ├── layout.tsx             # Layout principal
-│   ├── page.tsx               # Dashboard
-│   └── globals.css            # Estilos globais
-├── capacitor.config.ts        # Configuração Capacitor
-├── next.config.mjs            # Configuração Next.js
-├── tailwind.config.ts         # Configuração Tailwind
-├── setup-github.bat           # Script setup Windows
-├── DEPLOY.md                  # Guia completo de deploy
-└── package.json               # Dependências
-```
-
-## 🎯 Próximos Passos
-
-- [ ] Implementar tela de detalhes da obra
-- [ ] Adicionar controle de custos completo
-- [ ] Implementar cronograma com etapas
-- [ ] Integrar câmera para fotos
-- [ ] Adicionar geração de relatórios PDF
-- [ ] Implementar persistência de dados (LocalStorage/SQLite)
-
-## 📚 Documentação Adicional
-
-- `DEPLOY.md` - Guia completo de deploy e troubleshooting
-- GitHub Repo: https://github.com/jesusneresberg-ux/casas-populares
-- Actions: https://github.com/jesusneresberg-ux/casas-populares/actions
-
-## 📝 Licença
-
-Projeto livre para uso pessoal e comercial.
+MIT
