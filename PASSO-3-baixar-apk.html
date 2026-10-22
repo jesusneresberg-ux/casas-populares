@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passo 3 - Baixar APK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #24292e;
+            margin-bottom: 20px;
+        }
+        .option {
+            background: #f6f8fa;
+            padding: 20px;
+            border-left: 4px solid #0366d6;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+        .button {
+            display: inline-block;
+            background: #2ea44f;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 10px 5px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background: #2c974b;
+        }
+        .button.secondary {
+            background: #0366d6;
+        }
+        .button.secondary:hover {
+            background: #0256c7;
+        }
+        .info {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #0c5460;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #856404;
+        }
+        .steps {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        .steps ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .steps li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        code {
+            background: #f6f8fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .screenshot {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fafafa;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📱 Passo 3: Baixar o APK</h1>
+
+        <div class="warning">
+            <strong>⏳ Atenção:</strong> O GitHub Actions demora 5-10 minutos para compilar o APK.
+            Se você acabou de enviar o código, aguarde alguns minutos antes de baixar.
+        </div>
+
+        <div class="info">
+            <strong>📊 Ver Progresso do Build:</strong><br>
+            Clique abaixo para acompanhar a compilação em tempo real:
+            <br><br>
+            <a href="https://github.com/jesusneresberg-ux/casas-populares/actions" target="_blank" class="button secondary">
+                👀 Ver Progresso (Actions)
+            </a>
+        </div>
+
+        <h2>🎯 Escolha uma opção para baixar:</h2>
+
+        <!-- OPÇÃO 1 -->
+        <div class="option">
+            <h3>✅ Opção 1: Via Actions (Artifacts) - Recomendado</h3>
+
+            <div class="steps">
+                <ol>
+                    <li>Clique no botão abaixo para abrir GitHub Actions</li>
+                    <li>Clique no <strong>workflow mais recente</strong> (primeiro da lista)</li>
+                    <li>Role a página para baixo até encontrar <strong>"Artifacts"</strong></li>
+                    <li>Clique em <code>casas-populares-debug.apk</code> para baixar</li>
+                </ol>
+            </div>
+
+            <a href="https://github.com/jesusneresberg-ux/casas-populares/actions" target="_blank" class="button">
+                📦 Abrir GitHub Actions
+            </a>
+
+            <div class="screenshot">
+                <strong>📸 Como vai aparecer:</strong>
+                <pre style="background: white; padding: 10px; border-radius: 4px;">
+Actions
+  └─ Build Android APK ✅ (verde = pronto)
+       └─ [CLIQUE AQUI no workflow]
+            └─ Role para baixo ⬇️
+                 └─ Artifacts
+                      └─ 📦 casas-populares-debug.apk [BAIXE AQUI]
+                </pre>
+            </div>
+        </div>
+
+        <!-- OPÇÃO 2 -->
+        <div class="option">
+            <h3>🚀 Opção 2: Via Releases (Mais Simples)</h3>
+
+            <div class="steps">
+                <ol>
+                    <li>Clique no botão abaixo</li>
+                    <li>Clique na <strong>release mais recente</strong></li>
+                    <li>Em "Assets", baixe <code>app-debug.apk</code></li>
+                </ol>
+            </div>
+
+            <a href="https://github.com/jesusneresberg-ux/casas-populares/releases" target="_blank" class="button">
+                🎁 Abrir Releases
+            </a>
+        </div>
+
+        <!-- INSTALAÇÃO -->
+        <div class="option" style="border-left-color: #28a745;">
+            <h3>📲 Como instalar no celular Android:</h3>
+
+            <div class="steps">
+                <ol>
+                    <li>Transfira o arquivo <code>.apk</code> para o seu celular Android</li>
+                    <li>No celular, abra o arquivo <code>.apk</code></li>
+                    <li>Se solicitar, permita <strong>"Instalar de fontes desconhecidas"</strong></li>
+                    <li>Clique em <strong>"Instalar"</strong></li>
+                    <li>Pronto! O app estará instalado 🎉</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- TROUBLESHOOTING -->
+        <div class="warning">
+            <h3>⚠️ Problemas?</h3>
+            <ul>
+                <li><strong>Workflow não aparece?</strong> → Aguarde 1-2 minutos após o push</li>
+                <li><strong>Build falhou (vermelho)?</strong> → Clique no workflow para ver o erro nos logs</li>
+                <li><strong>Sem Artifacts?</strong> → Aguarde o build terminar (ícone verde ✅)</li>
+                <li><strong>Releases vazio?</strong> → Use a Opção 1 (Actions/Artifacts)</li>
+            </ul>
+        </div>
+
+        <div class="info">
+            <strong>🔄 Gerar novo APK:</strong><br>
+            Sempre que fizer alterações no código:
+            <pre style="background: white; padding: 10px; border-radius: 4px; margin-top: 10px;">
+git add .
+git commit -m "Suas alterações"
+git push</pre>
+            O GitHub gera um novo APK automaticamente!
+        </div>
+    </div>
+</body>
+</html>
