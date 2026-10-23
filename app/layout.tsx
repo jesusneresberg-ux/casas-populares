@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import PWAInstaller from "./components/PWAInstaller";
 
 export const metadata: Metadata = {
   title: "Casas Populares - Gestão de Obras",
@@ -27,6 +28,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icon-192.png" />
       </head>
       <body className="antialiased">
+        <PWAInstaller />
         {children}
       </body>
     </html>

@@ -1,11 +1,11 @@
 {
-  "name": "Casas Populares - Gestão de Obras",
-  "short_name": "Casas Populares",
-  "description": "Sistema de gestão de construção de casas populares",
+  "name": "Casas Populares",
+  "short_name": "Casas Pop",
+  "description": "Sistema de gestão para construção de casas populares",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#3b82f6",
+  "theme_color": "#2563eb",
   "orientation": "portrait",
   "icons": [
     {

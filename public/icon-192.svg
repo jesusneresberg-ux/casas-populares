@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <rect width="192" height="192" fill="#2563eb" rx="24"/>
+  <path d="M96 50L50 90h16v42h20V110h20v22h20V90h16z" fill="#ffffff"/>
+  <text x="96" y="160" text-anchor="middle" fill="#ffffff" font-size="14" font-family="sans-serif" font-weight="bold">CASAS</text>
+</svg>

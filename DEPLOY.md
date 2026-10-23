@@ -1,108 +1,135 @@
-# 🚀 Deploy e Geração de APK com GitHub Actions
+# 🌐 Guia de Deploy - Casas Populares PWA
 
-Este guia explica como configurar o repositório no GitHub para gerar o APK automaticamente.
+## ✅ Opção 1: Deploy Rápido (Vercel)
 
-## 📋 Pré-requisitos
+### Passo a passo:
 
-- Conta no GitHub (usuário: jesusneresberg-ux)
-- Git instalado no computador
-- Node.js instalado
+1. **Criar conta no Vercel** (grátis): https://vercel.com
 
-## 🔧 Passo a Passo
+2. **Instalar Vercel CLI**:
+   ```bash
+   npm install -g vercel
+   ```
 
-### 1. Inicializar Git no projeto
+3. **Fazer deploy**:
+   ```bash
+   cd casas-populares
+   vercel
+   ```
 
-Abra o terminal na pasta do projeto e execute:
+4. **Seguir instruções** no terminal e pronto! 🚀
 
-```bash
-cd casas-populares
-git init
-git add .
-git commit -m "Initial commit - Casas Populares App"
-```
-
-### 2. Criar repositório no GitHub
-
-1. Acesse: https://github.com/new
-2. Nome do repositório: `casas-populares`
-3. Deixe como **público** ou **privado**
-4. **NÃO** adicione README, .gitignore ou licença (já temos)
-5. Clique em "Create repository"
-
-### 3. Conectar e enviar código
-
-Copie e execute os comandos que o GitHub mostrar, ou use:
-
-```bash
-git remote add origin https://github.com/jesusneresberg-ux/casas-populares.git
-git branch -M main
-git push -u origin main
-```
-
-### 4. GitHub Actions vai começar automaticamente
-
-Após o push, o GitHub Actions:
-- ✅ Instala dependências
-- ✅ Faz build do Next.js
-- ✅ Configura Android SDK
-- ✅ Gera o APK
-- ✅ Cria release automática
-
-### 5. Baixar o APK
-
-**Opção 1 - Via Actions:**
-1. Vá em: `https://github.com/jesusneresberg-ux/casas-populares/actions`
-2. Clique no workflow mais recente
-3. Role até "Artifacts"
-4. Baixe `casas-populares-debug.apk`
-
-**Opção 2 - Via Releases:**
-1. Vá em: `https://github.com/jesusneresberg-ux/casas-populares/releases`
-2. Baixe o APK da release mais recente
-
-## 🔄 Gerar novo APK
-
-Sempre que você fizer um novo commit no branch `main`:
-
-```bash
-git add .
-git commit -m "Descrição das mudanças"
-git push
-```
-
-O GitHub Actions vai gerar um novo APK automaticamente!
-
-## 🎯 Instalar APK no celular
-
-1. Baixe o arquivo `.apk`
-2. Transfira para o celular Android
-3. Abra o arquivo no celular
-4. Permita "Instalar de fontes desconhecidas" se solicitado
-5. Instale o app
-
-## 🐛 Solução de Problemas
-
-**Se o build falhar:**
-1. Vá em Actions no GitHub
-2. Clique no workflow que falhou
-3. Veja os logs para identificar o erro
-
-**Erros comuns:**
-- Falta de permissão: Configure Actions em Settings > Actions > General
-- Build timeout: O build pode demorar 5-10 minutos na primeira vez
-
-## 📱 Testando localmente antes do GitHub
-
-```bash
-npm install
-npm run build
-npx cap sync android
-npx cap open android
-```
-
-No Android Studio:
-- Build > Build Bundle(s) / APK(s) > Build APK(s)
+Seu app estará disponível em: `https://casas-populares-xxx.vercel.app`
 
 ---
 
-**Dúvidas?** Verifique os logs no GitHub Actions para diagnosticar problemas.
+## ✅ Opção 2: Deploy Manual (Netlify)
+
+1. **Criar conta no Netlify** (grátis): https://netlify.com
+
+2. **Build local**:
+   ```bash
+   cd casas-populares
+   npm install
+   npm run build
+   ```
+
+3. **Fazer upload**:
+   - Arraste a pasta `.next` para o Netlify
+   - OU use Netlify CLI:
+     ```bash
+     npm install -g netlify-cli
+     netlify deploy --prod
+     ```
+
+---
+
+## ✅ Opção 3: GitHub + Vercel (Automático)
+
+### Mais fácil e recomendado!
+
+1. **Subir para GitHub**:
+   ```bash
+   cd casas-populares
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/SEU-USUARIO/casas-populares.git
+   git push -u origin main
+   ```
+
+2. **Conectar no Vercel**:
+   - Acesse https://vercel.com
+   - Click em "Import Project"
+   - Selecione seu repositório do GitHub
+   - Click em "Deploy"
+   - Pronto! ✅
+
+Cada push no GitHub vai atualizar automaticamente o site!
+
+---
+
+## 📱 Após o Deploy
+
+1. **Testar PWA**:
+   - Abra o site no celular
+   - Chrome: Menu → "Adicionar à tela inicial"
+   - Safari: Compartilhar → "Adicionar à Tela de Início"
+
+2. **URL do app**:
+   - Vai ficar algo como: `https://casas-populares.vercel.app`
+   - Você pode adicionar domínio personalizado depois
+
+3. **Funcionalidades offline**:
+   - Na primeira visita, o app baixa tudo
+   - Depois funciona offline!
+   - Fotos ficam salvas localmente
+
+---
+
+## 🔧 Problemas Comuns
+
+### Erro no build?
+```bash
+# Limpar cache
+rm -rf .next node_modules
+npm install
+npm run build
+```
+
+### PWA não instala?
+- Precisa ser HTTPS (Vercel/Netlify já são)
+- Precisa ter ícones e manifest.json (já tem!)
+- Precisa ter Service Worker (já tem!)
+
+---
+
+## 🎯 Próximos Passos
+
+Depois do deploy, você pode:
+
+1. **Customizar domínio**: `casas-populares.com.br`
+2. **Adicionar analytics**: Google Analytics
+3. **Adicionar banco de dados**: Firebase, Supabase
+4. **Adicionar autenticação**: NextAuth.js
+5. **Adicionar notificações push**: Firebase Cloud Messaging
+
+---
+
+## 💡 Dica Pro
+
+Use o **Vercel + GitHub** porque:
+- ✅ Deploy automático em cada commit
+- ✅ Preview de cada branch
+- ✅ Rollback fácil
+- ✅ SSL grátis
+- ✅ CDN global
+- ✅ Analytics incluído
+
+**Comando único**:
+```bash
+vercel --prod
+```
+
+E seu app está no ar! 🚀
